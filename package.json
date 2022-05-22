@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "bs-scss": "sass stories/assets/scss/bootstrap.scss stories/assets/css/bootstrap.css",
+    "start": "npm run bs-scss && npm run storybook"
   },
   "repository": {
     "type": "git",
@@ -29,7 +31,8 @@
     "@storybook/html": "^6.5.3",
     "@storybook/manager-webpack4": "^6.5.3",
     "@storybook/testing-library": "0.0.11",
-    "babel-loader": "^8.2.5"
+    "babel-loader": "^8.2.5",
+    "sass": "^1.52.1"
   },
   "dependencies": {}
 }
