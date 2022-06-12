@@ -1,5 +1,8 @@
 package com.tech.zerodha.kite.jpa.repository;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.r2dbc.DataR2dbcTest;
@@ -19,6 +22,12 @@ public class KiteLoginRepositoryTest {
 	@Autowired
 	private KiteLoginRepository kiteLoginRepository;
 
+	@Tags(value = {
+		@Tag(value = "r2dbc"), 
+		@Tag(value = "save"), 
+		@Tag(value = "findAll")
+	})
+	@DisplayName(value = "KiteLoginRepository to test save and findAll")
 	@Test
 	public void create() {
 		KiteUserLogin kiteTestLogin = new KiteUserLogin();
@@ -27,9 +36,14 @@ public class KiteLoginRepositoryTest {
 		kiteTestLogin.setPassword("password".getBytes());
 		kiteTestLogin.setPin("123".getBytes());
 
-		kiteLoginRepository.save(kiteTestLogin).as(StepVerifier::create)
-				.expectNextCount(1)
-				//.expectNextMatches(kiteUserLogin -> kiteUserLogin.equals(kiteTestLogin))
-		.verifyComplete();
+		kiteLoginRepository.save(kiteTestLogin)
+						   .as(StepVerifier::create)
+				           .expectNextMatches(kiteUserLogin -> kiteUserLogin.equals(kiteTestLogin))
+		                   .verifyComplete();
+		
+		kiteLoginRepository.findAll()
+						   .as(StepVerifier::create)
+						   .expectNextCount(1)
+						   .verifyComplete();
 	}
 }
