@@ -25,6 +25,7 @@
 		<r2dbc-bom.version>Borca-SR1</r2dbc-bom.version>
 		<r2dbc-spi-parent.version>1.0.0.RELEASE</r2dbc-spi-parent.version>
 		<r2dbc-h2.version>0.9.1.RELEASE</r2dbc-h2.version>
+		<r2dbc-pool.version>0.9.0.RELEASE</r2dbc-pool.version>
 		<r2dbc-postgresql.version>0.8.12.RELEASE</r2dbc-postgresql.version>
 
 		<tensorflow-java.version>0.4.1</tensorflow-java.version>
@@ -108,12 +109,18 @@
 				<artifactId>jakarta.persistence-api</artifactId>
 				<version>${jakarta.persistence-api.version}</version>
 			</dependency>
+			
+			<!-- r2dbc dependency -->
 			<dependency>
 				<groupId>io.r2dbc</groupId>
 				<artifactId>r2dbc-postgresql</artifactId>
 				<version>${r2dbc-postgresql.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>io.r2dbc</groupId>
+				<artifactId>r2dbc-pool</artifactId>
+				<version>${r2dbc-pool.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>io.r2dbc</groupId>
 				<artifactId>r2dbc-h2</artifactId>
