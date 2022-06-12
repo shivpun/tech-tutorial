@@ -10,35 +10,38 @@ import org.springframework.data.relational.core.mapping.Table;
 import lombok.Data;
 
 @Data
-@Table(name = "SB_KITE_TBL")
-public class KiteLogin implements Serializable {
-	
+@Table(name = "SB_KITE_USER_LOGIN_TBL")
+public class KiteUserLogin implements KiteId, Serializable {
+
 	private static final long serialVersionUID = 3294900426877139212L;
 
 	@Id
-	@Column(value = "SB_KITE_LOGIN_ID")
-	private Long id;
-	
+	@Column(value = "SB_KITE_USER_ID")
+	private String id;
+
+	@Column(value = "SB_KITE_NICK_NAME")
+	private String nickName;
+
 	@Column(value = "SB_KITE_USER_NAME")
-	private String userName;
-	
+	private byte[] userName;
+
 	@Column(value = "SB_KITE_PASSWORD")
-	private String password;
-	
+	private byte[] password;
+
 	@Column(value = "SB_KITE_PIN")
-	private String pin;
+	private byte[] pin;
 
 	@Override
 	public boolean equals(Object obj) {
-		if (!(obj instanceof KiteLogin)) {
+		if (!(obj instanceof KiteUserLogin)) {
 			return false;
 		}
-		KiteLogin other = (KiteLogin) obj;
-		return Objects.equals(userName, other.userName);
+		KiteUserLogin other = (KiteUserLogin) obj;
+		return Objects.equals(nickName, other.nickName);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(userName);
+		return Objects.hash(nickName);
 	}
 }

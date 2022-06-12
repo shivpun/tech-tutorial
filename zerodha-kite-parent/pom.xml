@@ -20,7 +20,7 @@
 	</properties>
 
 	<modules>
-		<module>zerodha-kite-jpa</module>
+		<module>zerodha-kite-r2dbc-jpa</module>
 		<module>zerodha-kite-websocket</module>
 		<module>zerodha-kite-webflux-rest-api</module>
 	</modules>
