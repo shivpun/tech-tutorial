@@ -25,4 +25,11 @@
 		<module>zerodha-kite-webflux-rest-api</module>
 		<module>zerodha-kite-core</module>
 	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+		</dependency>
+	</dependencies>
 </project>

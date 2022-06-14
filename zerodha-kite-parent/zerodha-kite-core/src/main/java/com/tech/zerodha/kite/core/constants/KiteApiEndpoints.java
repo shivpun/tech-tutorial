@@ -2,6 +2,14 @@ package com.tech.zerodha.kite.core.constants;
 
 public class KiteApiEndpoints {
 	
+	public static final String KITE_USER_ID_LABEL = "user_id";
+	
+	public static final String KITE_API_KEY_LABEL = "api_key";
+	
+	public static final String KITE_USER_AGENT_LABEL = "user-agent";
+	
+	public static final String KITE_VERSION_LABEL = "version";
+	
 	public static final String KITE_VERSION_VALUE = "2.9.11";
 	
 	public static final String KITE_API_KEY_VALUE = "kitefront";
