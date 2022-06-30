@@ -20,10 +20,10 @@
 	</properties>
 
 	<modules>
-		<module>zerodha-kite-r2dbc-jpa</module>
-		<module>zerodha-kite-websocket</module>
-		<module>zerodha-kite-webflux-rest-api</module>
 		<module>zerodha-kite-core</module>
+		<module>zerodha-kite-r2dbc-jpa</module>
+		<module>zerodha-kite-webflux-rest-api</module>
+		<module>zerodha-kite-websocket</module>
 	</modules>
 
 	<dependencies>
@@ -32,4 +32,19 @@
 			<artifactId>spring-boot</artifactId>
 		</dependency>
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.tech.zerodha.kite</groupId>
+				<artifactId>zerodha-kite-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.tech.zerodha.kite</groupId>
+				<artifactId>zerodha-kite-r2dbc-jpa</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>

@@ -30,6 +30,9 @@ public class KiteUserLogin implements KiteId, Serializable {
 
 	@Column(value = "SB_KITE_PIN")
 	private byte[] pin;
+	
+	@Column(value = "SB_KITE_ACTIVE")
+	private boolean active;
 
 	@Override
 	public boolean equals(Object obj) {

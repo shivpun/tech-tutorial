@@ -22,11 +22,7 @@ public class KiteLoginRepositoryTest {
 	@Autowired
 	private KiteLoginRepository kiteLoginRepository;
 
-	@Tags(value = {
-		@Tag(value = "r2dbc"), 
-		@Tag(value = "save"), 
-		@Tag(value = "findAll")
-	})
+	@Tags(value = { @Tag(value = "r2dbc"), @Tag(value = "save"), @Tag(value = "findAll") })
 	@DisplayName(value = "KiteLoginRepository to test save and findAll")
 	@Test
 	public void create() {
@@ -36,14 +32,28 @@ public class KiteLoginRepositoryTest {
 		kiteTestLogin.setPassword("password".getBytes());
 		kiteTestLogin.setPin("123".getBytes());
 
-		kiteLoginRepository.save(kiteTestLogin)
-						   .as(StepVerifier::create)
-				           .expectNextMatches(kiteUserLogin -> kiteUserLogin.equals(kiteTestLogin))
-		                   .verifyComplete();
-		
-		kiteLoginRepository.findAll()
-						   .as(StepVerifier::create)
-						   .expectNextCount(1)
-						   .verifyComplete();
+		kiteLoginRepository.save(kiteTestLogin).as(StepVerifier::create)
+				.expectNextMatches(kiteUserLogin -> kiteUserLogin.equals(kiteTestLogin)).verifyComplete();
+
+		kiteLoginRepository.findAll().as(StepVerifier::create).expectNextCount(1).verifyComplete();
+	}
+
+	@Tags(value = { @Tag(value = "r2dbc"), @Tag(value = "save"), @Tag(value = "findByActiveTrue") })
+	@DisplayName(value = "KiteLoginRepository to test save and findAll")
+	@Test
+	public void test_findByActiveTrue() {
+		KiteUserLogin kiteTestLogin = new KiteUserLogin();
+		kiteTestLogin.setNickName("TEST-001");
+		kiteTestLogin.setUserName("Test".getBytes());
+		kiteTestLogin.setPassword("password".getBytes());
+		kiteTestLogin.setPin("123".getBytes());
+		kiteTestLogin.setActive(true);
+
+		kiteLoginRepository.save(kiteTestLogin).as(StepVerifier::create)
+				.expectNextMatches(kiteUserLogin -> kiteUserLogin.equals(kiteTestLogin)).verifyComplete();
+
+		kiteLoginRepository.findByActiveTrue().as(StepVerifier::create)
+				.expectNextMatches(kiteUserLogin -> Boolean.TRUE.equals(kiteUserLogin.isActive()))
+				.verifyComplete();
 	}
 }

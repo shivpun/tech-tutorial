@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.0</version>
+		<version>2.7.1</version>
 		<relativePath />
 	</parent>
 
@@ -20,6 +20,7 @@
 
 		<java.version>17</java.version>
 		<maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+		<dependency-check-maven.version>7.1.1</dependency-check-maven.version>
 
 		<jakarta.persistence-api.version>3.1.0</jakarta.persistence-api.version>
 		<r2dbc-bom.version>Borca-SR1</r2dbc-bom.version>
@@ -109,7 +110,7 @@
 				<artifactId>jakarta.persistence-api</artifactId>
 				<version>${jakarta.persistence-api.version}</version>
 			</dependency>
-			
+
 			<!-- r2dbc dependency -->
 			<dependency>
 				<groupId>io.r2dbc</groupId>
@@ -181,6 +182,17 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

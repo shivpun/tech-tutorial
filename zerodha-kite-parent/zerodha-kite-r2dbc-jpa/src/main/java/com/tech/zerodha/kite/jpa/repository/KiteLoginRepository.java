@@ -5,6 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import com.tech.zerodha.kite.jpa.model.KiteUserLogin;
 
+import reactor.core.publisher.Flux;
+
 @Repository
-public interface KiteLoginRepository extends R2dbcRepository<KiteUserLogin, Long> {
+public interface KiteLoginRepository extends R2dbcRepository<KiteUserLogin, String> {
+	
+	Flux<KiteUserLogin> findByActiveTrue();
 }
