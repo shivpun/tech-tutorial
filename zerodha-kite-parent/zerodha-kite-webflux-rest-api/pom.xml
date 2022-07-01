@@ -24,11 +24,11 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.tech.zerodha.kite</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>zerodha-kite-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.tech.zerodha.kite</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>zerodha-kite-r2dbc-jpa</artifactId>
 		</dependency>
 

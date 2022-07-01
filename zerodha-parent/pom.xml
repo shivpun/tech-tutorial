@@ -129,6 +129,12 @@
 				<groupId>org.mock-server</groupId>
 				<artifactId>mockserver-integration-testing</artifactId>
 				<version>${org.mock-server.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>junit</groupId>
+						<artifactId>junit</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency>
 				<groupId>org.mock-server</groupId>
