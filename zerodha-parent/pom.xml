@@ -30,10 +30,14 @@
 		<r2dbc-postgresql.version>0.8.12.RELEASE</r2dbc-postgresql.version>
 
 		<tensorflow-java.version>0.4.1</tensorflow-java.version>
+		
+		<org.springdoc.version>1.6.9</org.springdoc.version>
 
 		<spring-boot.version>2.7.0</spring-boot.version>
 		<spring-cloud.version>2022.0.0-M2</spring-cloud.version>
 		<spring-data-bom.version>2021.2.0</spring-data-bom.version>
+
+		<org.mock-server.version>5.13.2</org.mock-server.version>
 	</properties>
 
 	<dependencies>
@@ -103,6 +107,38 @@
 				<artifactId>tensorflow-java</artifactId>
 				<version>${tensorflow-java.version}</version>
 				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-webflux-ui</artifactId>
+				<version>${org.springdoc.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mock-server</groupId>
+				<artifactId>mockserver-netty</artifactId>
+				<version>${org.mock-server.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mock-server</groupId>
+				<artifactId>mockserver-client-java</artifactId>
+				<version>${org.mock-server.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mock-server</groupId>
+				<artifactId>mockserver-integration-testing</artifactId>
+				<version>${org.mock-server.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mock-server</groupId>
+				<artifactId>mockserver-spring-test-listener-no-dependencies</artifactId>
+				<version>${org.mock-server.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mock-server</groupId>
+				<artifactId>mockserver-netty-no-dependencies</artifactId>
+				<version>${org.mock-server.version}</version>
 			</dependency>
 
 			<dependency>

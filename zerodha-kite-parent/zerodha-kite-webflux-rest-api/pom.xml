@@ -54,6 +54,28 @@
 			<artifactId>r2dbc-h2</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- org.mock-server dependency -->
+		<dependency>
+			<groupId>org.mock-server</groupId>
+			<artifactId>mockserver-netty</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mock-server</groupId>
+			<artifactId>mockserver-client-java</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mock-server</groupId>
+			<artifactId>mockserver-integration-testing</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mock-server</groupId>
+			<artifactId>mockserver-spring-test-listener-no-dependencies</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

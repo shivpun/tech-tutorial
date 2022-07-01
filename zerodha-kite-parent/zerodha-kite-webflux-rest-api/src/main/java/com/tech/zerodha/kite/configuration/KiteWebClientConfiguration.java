@@ -1,8 +1,10 @@
 package com.tech.zerodha.kite.configuration;
 
 import static com.tech.zerodha.kite.core.constants.KiteApiEndpoints.KITE_COOKIE;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.ExchangeFilterFunction;
@@ -14,6 +16,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Configuration
+@EnableConfigurationProperties(KiteApiProperties.class)
 public class KiteWebClientConfiguration {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(KiteWebClientConfiguration.class);
@@ -22,10 +25,8 @@ public class KiteWebClientConfiguration {
 
 	@Bean(value = { "non-blocking-web-api-client" })
 	public WebClient webApiClient() {
-		WebClient webClient = WebClient.builder()
-									   .baseUrl(kiteApiProperties.getKiteBaseUrl())
-									   .filter(logFilter())
-									   .build();
+		WebClient webClient = WebClient.builder().baseUrl(kiteApiProperties.getKiteBaseUrl()).filter(logFilter())
+				.build();
 		return webClient;
 	}
 
