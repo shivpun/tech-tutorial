@@ -30,7 +30,7 @@
 		<r2dbc-postgresql.version>0.8.12.RELEASE</r2dbc-postgresql.version>
 
 		<tensorflow-java.version>0.4.1</tensorflow-java.version>
-		
+
 		<org.springdoc.version>1.6.9</org.springdoc.version>
 
 		<spring-boot.version>2.7.0</spring-boot.version>
@@ -222,6 +222,7 @@
 			<plugin>
 				<groupId>org.owasp</groupId>
 				<artifactId>dependency-check-maven</artifactId>
+				<version>${dependency-check-maven.version}</version>
 				<executions>
 					<execution>
 						<goals>

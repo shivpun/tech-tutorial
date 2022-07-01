@@ -29,8 +29,6 @@ public class KiteApiProperties {
 
 	private String userIdValue;
 
-	private long uidValue = new Date().getTime();
-
 	private String kiteBaseUrl = API_KITE_URL;
 
 	private String kiteOmsBaseUrl = API_KITE_OMS_URL;
@@ -58,4 +56,8 @@ public class KiteApiProperties {
 	private String webApiKeyLabel = KITE_API_KEY_LABEL;
 
 	private String webApiKeyValue = KITE_API_KEY_VALUE;
+	
+	public long getUidValue() {
+		return new Date().getTime();
+	}
 }
