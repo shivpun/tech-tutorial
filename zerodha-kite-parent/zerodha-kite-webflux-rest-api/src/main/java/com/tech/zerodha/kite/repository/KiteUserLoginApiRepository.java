@@ -1,4 +1,4 @@
-package com.tech.zerodha.kite.service;
+package com.tech.zerodha.kite.repository;
 
 import static com.tech.zerodha.kite.core.constants.KiteApiEndpoints.KITE_COOKIE;
 import static com.tech.zerodha.kite.core.constants.KiteApiEndpoints.KITE_LOGIN_ENDPOINT;
@@ -11,7 +11,7 @@ import static com.tech.zerodha.kite.utils.WebClientUtils.twoFABodyInserter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClient.RequestBodySpec;
 
@@ -24,8 +24,8 @@ import lombok.AllArgsConstructor;
 import reactor.core.publisher.Mono;
 
 @AllArgsConstructor
-@Service(value = "kite-user-login-service")
-public class KiteUserLoginService {
+@Repository(value = "kite-user-login-api-repository")
+public class KiteUserLoginApiRepository {
 
 	private final KiteApiProperties kiteApiProperties;
 

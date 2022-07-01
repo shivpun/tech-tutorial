@@ -15,8 +15,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-		<java.version>17</java.version>
 	</properties>
 
 	<modules>
@@ -36,13 +34,23 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.tech.zerodha.kite</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>zerodha-kite-core</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.tech.zerodha.kite</groupId>
+				<groupId>${project.groupId}</groupId>
 				<artifactId>zerodha-kite-r2dbc-jpa</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>zerodha-kite-webflux-rest-api</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>zerodha-kite-websocket</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
