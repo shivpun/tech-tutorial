@@ -25,6 +25,12 @@ public class KiteLoginHistory implements KiteId, Serializable {
 	@Column(value = "SB_KITE_PUBLIC_TOKEN")
 	private String publicToken;
 	
+	@Column(value = "SB_KITE_SESSION")
+	private String kfSession;
+	
+	@Column(value = "SB_KITE_ENC_TOKEN")
+	private String encToken;
+	
 	@Column(value = "SB_KITE_ACTIVE")
 	private boolean active;
 	

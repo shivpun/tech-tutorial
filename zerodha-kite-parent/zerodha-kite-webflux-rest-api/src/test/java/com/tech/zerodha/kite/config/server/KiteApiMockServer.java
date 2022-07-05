@@ -14,7 +14,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.tech.zerodha.kite.core.properties.KiteApiProperties;
 
-@MockServerTest
+//@MockServerTest
 @TestInstance(Lifecycle.PER_CLASS)
 @ExtendWith(value = SpringExtension.class)
 public interface KiteApiMockServer {
@@ -22,12 +22,14 @@ public interface KiteApiMockServer {
 	@BeforeAll
 	default void setUp() throws MalformedURLException {
 		URL url = new URL(getKiteApiProperties().getKiteBaseUrl());
-		getMockServerClient().bind(url.getPort());
+		if (getMockServerClient() != null) {
+			getMockServerClient().bind(url.getPort());
+		}
 	}
 
 	@AfterAll
 	default void stopServer() {
-		if (getMockServerClient() != null || !getMockServerClient().hasStopped()) {
+		if (getMockServerClient() != null || (getMockServerClient()!=null && !getMockServerClient().hasStopped())) {
 			getMockServerClient().stop();
 		}
 	}

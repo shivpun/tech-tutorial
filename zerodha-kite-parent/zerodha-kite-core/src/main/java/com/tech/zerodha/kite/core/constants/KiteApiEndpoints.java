@@ -4,9 +4,7 @@ public class KiteApiEndpoints {
 	
 	public static final String KITE_USER_ID_LABEL = "user_id";
 	
-	public static final String KITE_FORM_USER_ID = KITE_USER_ID_LABEL;
-	
-	public static final String KITE_COOKIE = "cookie";
+	public static final String KITE_SET_COOKIE = "set-cookie";
 	
 	public static final String HEADER_USER_AGENT = "user-agent";
 	
@@ -15,6 +13,16 @@ public class KiteApiEndpoints {
 	public static final String HEADER_X_KITE_USER_ID = "x-kite-userid";
 	
 	public static final String HEADER_X_KITE_VERSION = "x-kite-version";
+	
+	public static final String COOKIE_KF_SESSION = "kf_session";
+	
+	public static final String COOKIE_PUBLIC_TOKEN = "public_token";
+	
+	public static final String COOKIE_ENC_TOKEN = "enctoken";
+	
+	public static final String COOKIE_USER_ID = KITE_USER_ID_LABEL;
+	
+	public static final String KITE_FORM_USER_ID = KITE_USER_ID_LABEL;
 	
 	public static final String KITE_FORM_PASSWORD = "password";
 	
