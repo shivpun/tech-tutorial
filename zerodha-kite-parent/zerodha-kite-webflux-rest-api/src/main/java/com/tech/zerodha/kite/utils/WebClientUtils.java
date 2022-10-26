@@ -79,6 +79,7 @@ public final class WebClientUtils {
 		Assert.notNull(jsonString, "Json string must not be null");
 		Assert.hasLength(jsonString, "Json string must have length");
 		String strArray[] = jsonString.split(";")[0].split("=");
+		Assert.isTrue(strArray.length < 2, "Must have length 2 or more but not less");
 		switch (strArray[0]) {
 			case COOKIE_KF_SESSION:
 				kiteLoginHistory.setKfSession(strArray[1]);

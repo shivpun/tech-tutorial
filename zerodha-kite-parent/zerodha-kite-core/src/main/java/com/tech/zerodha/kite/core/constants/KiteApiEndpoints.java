@@ -2,6 +2,8 @@ package com.tech.zerodha.kite.core.constants;
 
 public class KiteApiEndpoints {
 	
+	private KiteApiEndpoints() {}
+	
 	public static final String KITE_USER_ID_LABEL = "user_id";
 	
 	public static final String KITE_SET_COOKIE = "set-cookie";

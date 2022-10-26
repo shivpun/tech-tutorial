@@ -32,3 +32,8 @@ keytool -genkeypair -alias zerodha -keyalg RSA -keysize 2048 -storetype PKCS12 -
 ```
 
 ## [Spring JPA (Non blocking)] (https://github.com/ivangfr/spring-data-jpa-r2dbc-mysql-stream-million-records/blob/main/streamer-data-r2dbc/pom.xml)
+
+## Postgres
+```
+docker run -d --name stocks-dev -e POSTGRES_PASSWORD=stockpassword -e PGDATA=/var/lib/postgresql/data/pgdata -v E:\DEV\CONTAINERIZATION\DOCKER\VOLUME:/var/lib/postgresql/data postgres
+```

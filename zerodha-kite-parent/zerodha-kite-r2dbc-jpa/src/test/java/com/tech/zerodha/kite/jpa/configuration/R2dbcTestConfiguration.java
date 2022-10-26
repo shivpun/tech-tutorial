@@ -3,7 +3,9 @@ package com.tech.zerodha.kite.jpa.configuration;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.r2dbc.connection.init.ConnectionFactoryInitializer;
+import org.springframework.r2dbc.connection.init.ResourceDatabasePopulator;
 
 import com.tech.zerodha.kite.jpa.configuration.properties.KiteR2dbcTestProperties;
 import com.tech.zerodha.kite.jpa.configuration.properties.KiteR2dbcTestProperties.KiteTestSqlProperties;
@@ -24,8 +26,8 @@ public class R2dbcTestConfiguration {
 		kiteTestSqlProperties.initTestSql(initializer, connectionFactory.getMetadata().getName());
 		// This will drop our table after we are done so we can have a fresh start next
 		// run
-		// initializer.setDatabaseCleaner(new ResourceDatabasePopulator(new
-		// ClassPathResource("cleanup.sql")));
+		//initializer.setDatabaseCleaner(new ResourceDatabasePopulator(new ClassPathResource("cleanup.sql")));
+		initializer.afterPropertiesSet();
 		return initializer;
 	}
 

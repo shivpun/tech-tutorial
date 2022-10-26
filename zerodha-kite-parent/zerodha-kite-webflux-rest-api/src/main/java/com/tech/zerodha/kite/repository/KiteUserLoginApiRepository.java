@@ -1,6 +1,5 @@
 package com.tech.zerodha.kite.repository;
 
-import static com.tech.zerodha.kite.core.constants.KiteApiEndpoints.KITE_SET_COOKIE;
 import static com.tech.zerodha.kite.core.constants.KiteApiEndpoints.KITE_LOGIN_ENDPOINT;
 import static com.tech.zerodha.kite.core.constants.KiteApiEndpoints.KITE_TWO_FACTOR_AUTHENTICATOR_ENDPOINT;
 import static com.tech.zerodha.kite.utils.WebClientUtils.KITE_USER_LOGIN_RESPONSE;
@@ -8,9 +7,6 @@ import static com.tech.zerodha.kite.utils.WebClientUtils.API_KITE_LOGIN_HISTORY;
 import static com.tech.zerodha.kite.utils.WebClientUtils.composeUserApiHeader;
 import static com.tech.zerodha.kite.utils.WebClientUtils.loginBodyInserter;
 import static com.tech.zerodha.kite.utils.WebClientUtils.twoFABodyInserter;
-
-import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;

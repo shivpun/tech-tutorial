@@ -5,11 +5,16 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.data.r2dbc.DataR2dbcTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.test.context.TestExecutionListeners.MergeMode;
+import org.springframework.test.context.jdbc.Sql;
 
 import com.tech.zerodha.kite.jpa.configuration.R2dbcTestConfiguration;
+import com.tech.zerodha.kite.jpa.configuration.SqlScriptsR2dbcTestExecutionListener;
 import com.tech.zerodha.kite.jpa.model.KiteUserLogin;
 
 import reactor.test.StepVerifier;
