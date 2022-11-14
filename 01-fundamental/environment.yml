@@ -2,12 +2,12 @@ name: 01-tensor-fundamental
 channels:
   - defaults
 dependencies:
-  - python==3.10.4
+  - python==3.10.0
   - ipykernel 
   - pip
   - pip:
-    - oauthlib==3.2.0
-    - protobuf==3.20.1
-    - tensorflow==2.8.0
-    - tensorflow-cpu==2.8.0
+    - oauthlib==3.2.2
+    - protobuf==3.9.2
+    - tensorflow==2.10.0
+    - tensorflow-cpu==2.10.0
   
