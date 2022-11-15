@@ -1,0 +1,14 @@
+!contents -R2 -g -p -f -h
+
+!*< SLiM relevant stuff
+
+!define TEST_SYSTEM {slim}
+
+!2 ''Classpaths''
+!define SUT_PATH (!-
+!path lib/*.jar
+!path target/*.jar
+-!)
+
+
+*!
