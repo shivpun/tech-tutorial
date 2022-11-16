@@ -1,6 +1,13 @@
 !*> setup
-!|import                          |
+!define TEST_SYSTEM {slim}
+!path lib/*.jar
+!path target/*.jar
+*!
+
+
+!*> Dependencies
+!|import                     |
 |com.example.fitnesse.fixture|
-|fitnesse.slim.test|
-|fitnesse.fixtures|
+|fitnesse.slim.test          |
+|fitnesse.fixtures           |
 *!

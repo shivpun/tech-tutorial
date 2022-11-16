@@ -1,7 +1,5 @@
 package com.example.fitnesse.fixture;
 
-import fit.Fixture;
-
 public class CreditsForPayment {
 	public double payment;
 	public int credits;
@@ -11,7 +9,7 @@ public class CreditsForPayment {
 	}
 
 	public void execute() {
-		this.credits = (int) (payment/2);
+		this.credits = (int) (payment / 2);
 	}
 
 	public int credits() {

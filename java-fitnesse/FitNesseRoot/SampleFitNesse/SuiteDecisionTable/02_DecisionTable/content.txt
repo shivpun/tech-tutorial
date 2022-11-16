@@ -1,0 +1,5 @@
+!3 Payment test
+The amount you pay determines how many credits get added to your balance.
+!|ParameterizedFixture|Test Example|
+|getName?                          |
+|Test Example                      |
